@@ -9,7 +9,16 @@
         padding: 0.5rem;
         font-family: 'Courier New', monospace;
         margin-bottom: 1rem;
+        position: relative;
     }
+
+    .copy-btn {
+        position: absolute;
+        top: 0.5rem;
+        right: 0.5rem;
+        font-size: 0.8rem;
+    }
+
     .step {
         margin-bottom: 1.5rem;
     }
@@ -28,47 +37,71 @@
         <div class="step">
             <h3 class="h5">Step 1: Initialize a Git Repository (if not already done)</h3>
             <p>Open CMD and navigate to your project folder. Run this command to initialize Git.</p>
-            <div class="command">git init</div>
+            <div class="command">
+                git init
+                <button class="btn btn-sm btn-outline-primary copy-btn" onclick="copyToClipboard(this.previousSibling.textContent.trim())">Copy</button>
+            </div>
         </div>
 
         <div class="step">
             <h3 class="h5">Step 2: Create a New Branch</h3>
             <p>To create and switch to a new branch (e.g., 'feature-branch'), use this command. Copy and run it in CMD.</p>
-            <div class="command">git checkout -b feature-branch</div>
+            <div class="command">
+                git checkout -b feature-branch
+                <button class="btn btn-sm btn-outline-primary copy-btn" onclick="copyToClipboard(this.previousSibling.textContent.trim())">Copy</button>
+            </div>
             <p>This creates a new branch called 'feature-branch' and switches to it.</p>
         </div>
 
         <div class="step">
             <h3 class="h5">Step 3: Make Changes and Commit</h3>
             <p>Edit your files, then stage and commit changes. First, add files to staging:</p>
-            <div class="command">git add .</div>
+            <div class="command">
+                git add .
+                <button class="btn btn-sm btn-outline-primary copy-btn" onclick="copyToClipboard(this.previousSibling.textContent.trim())">Copy</button>
+            </div>
             <p>Then commit with a message:</p>
-            <div class="command">git commit -m "Add new feature"</div>
+            <div class="command">
+                git commit -m "Add new feature"
+                <button class="btn btn-sm btn-outline-primary copy-btn" onclick="copyToClipboard(this.previousSibling.textContent.trim())">Copy</button>
+            </div>
         </div>
 
         <div class="step">
             <h3 class="h5">Step 4: Switch Back to Main Branch</h3>
             <p>Switch to the main branch (usually 'main' or 'master').</p>
-            <div class="command">git checkout main</div>
+            <div class="command">
+                git checkout main
+                <button class="btn btn-sm btn-outline-primary copy-btn" onclick="copyToClipboard(this.previousSibling.textContent.trim())">Copy</button>
+            </div>
         </div>
 
         <div class="step">
             <h3 class="h5">Step 5: Merge Changes into Main Branch</h3>
             <p>Merge the feature branch into main. Ensure you're on main, then run:</p>
-            <div class="command">git merge feature-branch</div>
+            <div class="command">
+                git merge feature-branch
+                <button class="btn btn-sm btn-outline-primary copy-btn" onclick="copyToClipboard(this.previousSibling.textContent.trim())">Copy</button>
+            </div>
             <p>If there are conflicts, resolve them manually and commit.</p>
         </div>
 
         <div class="step">
             <h3 class="h5">Step 6: Push Changes to Remote (Optional)</h3>
             <p>If you have a remote repository, push the merged changes.</p>
-            <div class="command">git push origin main</div>
+            <div class="command">
+                git push origin main
+                <button class="btn btn-sm btn-outline-primary copy-btn" onclick="copyToClipboard(this.previousSibling.textContent.trim())">Copy</button>
+            </div>
         </div>
 
         <div class="step">
             <h3 class="h5">Step 7: Delete the Feature Branch (Optional)</h3>
             <p>After merging, delete the branch locally.</p>
-            <div class="command">git branch -d feature-branch</div>
+            <div class="command">
+                git branch -d feature-branch
+                <button class="btn btn-sm btn-outline-primary copy-btn" onclick="copyToClipboard(this.previousSibling.textContent.trim())">Copy</button>
+            </div>
         </div>
     </section>
 
@@ -79,44 +112,80 @@
         <div class="step">
             <h3 class="h5">Step 1: Build a Docker Image</h3>
             <p>Navigate to your project directory with the Dockerfile. Build the image with a tag (e.g., 'dockerproject').</p>
-            <div class="command">docker build -t dockerproject .</div>
+            <div class="command">
+                docker build -t dockerproject .
+                <button class="btn btn-sm btn-outline-primary copy-btn" onclick="copyToClipboard(this.previousSibling.textContent.trim())">Copy</button>
+            </div>
             <p>This builds the image from the current directory.</p>
         </div>
 
         <div class="step">
             <h3 class="h5">Step 2: Run the Docker Container</h3>
             <p>Run the built image as a container, mapping a port (e.g., 8080).</p>
-            <div class="command">docker run -d -p 8080:8080 dockerproject</div>
+            <div class="command">
+                docker run -d -p 8080:8080 dockerproject
+                <button class="btn btn-sm btn-outline-primary copy-btn" onclick="copyToClipboard(this.previousSibling.textContent.trim())">Copy</button>
+            </div>
             <p>This starts the container and exposes port 80 inside the container to port 8080 on your host.</p>
         </div>
 
         <div class="step">
             <h3 class="h5">Step 3: Stop the Container (If Needed)</h3>
             <p>To stop a running container, first list containers, then stop by ID or name.</p>
-            <div class="command">docker ps</div>
+            <div class="command">
+                docker ps
+                <button class="btn btn-sm btn-outline-primary copy-btn" onclick="copyToClipboard(this.previousSibling.textContent.trim())">Copy</button>
+            </div>
             <p>Then stop:</p>
-            <div class="command">docker stop &lt;container-id&gt;</div>
+            <div class="command">
+                docker stop &lt;container-id&gt;
+                <button class="btn btn-sm btn-outline-primary copy-btn" onclick="copyToClipboard(this.previousSibling.textContent.trim())">Copy</button>
+            </div>
         </div>
 
         <div class="step">
             <h3 class="h5">Step 4: Add Changes and Rebuild</h3>
             <p>After making changes to your code or Dockerfile, rebuild the image. First, stop and remove the old container if running.</p>
-            <div class="command">docker rm &lt;container-id&gt;</div>
+            <div class="command">
+                docker rm &lt;container-id&gt;
+                <button class="btn btn-sm btn-outline-primary copy-btn" onclick="copyToClipboard(this.previousSibling.textContent.trim())">Copy</button>
+            </div>
             <p>Then rebuild:</p>
-            <div class="command">docker build -t dockerproject .</div>
+            <div class="command">
+                docker build -t dockerproject .
+                <button class="btn btn-sm btn-outline-primary copy-btn" onclick="copyToClipboard(this.previousSibling.textContent.trim())">Copy</button>
+            </div>
             <p>And run again:</p>
-            <div class="command">docker run -d -p 8080:8080 dockerproject</div>
+            <div class="command">
+                docker run -d -p 8080:8080 dockerproject
+                <button class="btn btn-sm btn-outline-primary copy-btn" onclick="copyToClipboard(this.previousSibling.textContent.trim())">Copy</button>
+            </div>
             <p>This ensures your changes are included in the new build.</p>
         </div>
 
         <div class="step">
             <h3 class="h5">Step 5: View Logs (Optional)</h3>
             <p>To check container logs for debugging.</p>
-            <div class="command">docker logs &lt;container-id&gt;</div>
+            <div class="command">
+                docker logs &lt;container-id&gt;
+                <button class="btn btn-sm btn-outline-primary copy-btn" onclick="copyToClipboard(this.previousSibling.textContent.trim())">Copy</button>
+            </div>
         </div>
     </section>
 </div>
 
 <!-- Bootstrap JS (optional, for interactive components) -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<!-- Custom JS for copy functionality -->
+<script>
+    function copyToClipboard(text) {
+        navigator.clipboard.writeText(text).then(function() {
+            // Optional: Show a success message
+            alert('Command copied to clipboard!');
+        }, function(err) {
+            // Fallback for older browsers
+            console.error('Could not copy text: ', err);
+        });
+    }
+</script>
 
