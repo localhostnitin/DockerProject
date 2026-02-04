@@ -28,7 +28,7 @@ jobs:
       # Step 3: Build Docker image with latest and commit SHA tags
       - name: Build Docker image
         run: |
-          docker build -t ${{ secrets.DOCKER_USERNAME }}/dockerproject:latest \
+          docker build -t ${{ secrets.DOCKER_USERNAME }}/dockerproject:latest .
                        -t ${{ secrets.DOCKER_USERNAME }}/dockerproject:${{ github.sha }} .
 
       # Step 4: Push both tags to Docker Hub
